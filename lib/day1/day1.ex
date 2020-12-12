@@ -6,7 +6,7 @@ defmodule Aoc2020.Day1 do
     #  those two numbers together
 
     # build a map that gets me the 2020's complement
-    adds_to_2020 = build_complement_list(input, 2020)
+    adds_to_2020 = build_complement_map(input, 2020)
 
     # get the first entry that exists in the input
     num = input
@@ -24,11 +24,11 @@ defmodule Aoc2020.Day1 do
     #  then we solve the x + y = k, where k = 2020 - z
 
     # builds a map of 2020 - z -> z, where z is an original element of the list, and 2020 - z = k
-    adds_to_2020 = build_complement_list(input, 2020)
+    adds_to_2020 = build_complement_map(input, 2020)
     k = Map.keys(adds_to_2020)
 
     adds_to_k = k
-      |> Enum.map(fn e -> build_complement_list(input, e) end)
+      |> Enum.map(fn e -> build_complement_map(input, e) end)
 
     {x, y} = adds_to_k
       |> Enum.map(fn e -> filter_list_from_map(input, e) end)
@@ -40,7 +40,7 @@ defmodule Aoc2020.Day1 do
     (x * y) * z
   end
 
-  defp build_complement_list(list, n) do
+  defp build_complement_map(list, n) do
     list |> Enum.map(fn e -> {n - e, e} end) |> Map.new
   end
 
