@@ -3,10 +3,7 @@ defmodule Aoc2020.Day3 do
 
   @tree "#"
   @open "."
-  # @right 3 # three to the right, one down
-  # @down 1
 
-  # defp is_tree(nil), do: 0
   defp is_tree(@tree), do: 1
   defp is_tree(@open), do: 0
 
@@ -29,8 +26,6 @@ defmodule Aoc2020.Day3 do
     new_x = rem(x + right, horizontal_size)
     new_y = y + down
 
-    # Logger.debug inspect({x, y, new_x, new_y, position, horizontal_size, length(list)})
-
     is_tree(position) + descend(list, new_x, new_y, right, down)
   end
 
@@ -38,8 +33,6 @@ defmodule Aoc2020.Day3 do
     right = 3
     down = 1
     num_trees = descend(input, 0, 0, right, down)
-
-    # Logger.debug inspect(num_trees)
 
     num_trees
   end
