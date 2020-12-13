@@ -7,7 +7,7 @@ defmodule Aoc2020test.Day3 do
     {:ok, content} = File.read(path)
 
     content
-      |> String.split("\n", trim: true)
+    |> String.split("\n", trim: true)
   end
 
   test "works for the provided sample" do
@@ -31,6 +31,6 @@ defmodule Aoc2020test.Day3 do
   test "works for the provided list for part 2" do
     result = Aoc2020.Day3.run_part_2(read_file_to_list("./test/day3/input.txt"))
 
-    assert result == 9709761600
+    assert result == 9_709_761_600
   end
 end

@@ -7,7 +7,7 @@ defmodule Aoc2020test.Day2 do
     {:ok, content} = File.read(path)
 
     content
-      |> String.split("\n", trim: true)
+    |> String.split("\n", trim: true)
   end
 
   test "works for the provided sample" do

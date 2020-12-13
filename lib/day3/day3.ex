@@ -20,8 +20,10 @@ defmodule Aoc2020.Day3 do
     # the horizontal size dictates how our world "replicates"
     horizontal_size = String.length(List.first(list))
 
-    position = list
-      |> Enum.at(y) # we'll go down first (name of your sex tape... 99!)
+    position =
+      list
+      # we'll go down first (name of your sex tape... 99!)
+      |> Enum.at(y)
       |> String.at(x)
 
     new_x = rem(x + right, horizontal_size)
@@ -57,11 +59,11 @@ defmodule Aoc2020.Day3 do
   """
   def run_part_2(input) do
     slopes = [
-      {1,1},
-      {3,1},
-      {5,1},
-      {7,1},
-      {1,2}
+      {1, 1},
+      {3, 1},
+      {5, 1},
+      {7, 1},
+      {1, 2}
     ]
 
     slopes

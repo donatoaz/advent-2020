@@ -9,7 +9,8 @@ defmodule Aoc2020.Day1 do
     adds_to_2020 = build_complement_map(input, 2020)
 
     # get the first entry that exists in the input
-    num = input
+    num =
+      input
       |> Enum.filter(fn e -> Map.has_key?(adds_to_2020, e) end)
       |> List.first()
 
@@ -27,21 +28,23 @@ defmodule Aoc2020.Day1 do
     adds_to_2020 = build_complement_map(input, 2020)
     k = Map.keys(adds_to_2020)
 
-    adds_to_k = k
+    adds_to_k =
+      k
       |> Enum.map(fn e -> build_complement_map(input, e) end)
 
-    {x, y} = adds_to_k
+    {x, y} =
+      adds_to_k
       |> Enum.map(fn e -> filter_list_from_map(input, e) end)
-      |> Enum.reject(fn {a,_} -> a == nil end)
+      |> Enum.reject(fn {a, _} -> a == nil end)
       |> List.first()
 
     z = Map.get(adds_to_2020, x + y)
 
-    (x * y) * z
+    x * y * z
   end
 
   defp build_complement_map(list, n) do
-    list |> Enum.map(fn e -> {n - e, e} end) |> Map.new
+    list |> Enum.map(fn e -> {n - e, e} end) |> Map.new()
   end
 
   defp filter_list_from_map(list, map) do
