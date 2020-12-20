@@ -3,6 +3,7 @@ defmodule Aoc2020.Day1 do
 
   defmodule Part1 do
     alias Aoc2020.Day1
+
     def run(input) do
       # Specifically, they need you to find the two entries that sum to 2020 and then multiply
       #  those two numbers together
@@ -22,6 +23,7 @@ defmodule Aoc2020.Day1 do
 
   defmodule Part2 do
     alias Aoc2020.Day1
+
     def run(input) do
       # In your expense report, what is the product of the three entries that sum to 2020?
 

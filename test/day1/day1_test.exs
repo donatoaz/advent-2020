@@ -4,22 +4,22 @@ defmodule Aoc2020test.Day1 do
   import Helpers, only: [read_file_to_list_of_int: 1]
   doctest Aoc2020.Day1
 
-  alias Aoc2020.Day1.{Part1,Part2}
+  alias Aoc2020.Day1.{Part1, Part2}
 
   describe "part 1" do
-      test "works for sample list" do
-        sample_list = [1721, 979, 366, 299, 675, 1456]
+    test "works for sample list" do
+      sample_list = [1721, 979, 366, 299, 675, 1456]
 
-        assert Part1.run(sample_list) == 514_579
-      end
+      assert Part1.run(sample_list) == 514_579
+    end
 
-      test "works for the provided list" do
-        list = read_file_to_list_of_int("./test/day1/input.txt")
+    test "works for the provided list" do
+      list = read_file_to_list_of_int("./test/day1/input.txt")
 
-        result = Part1.run(list)
+      result = Part1.run(list)
 
-        assert result == 1_020_036
-      end
+      assert result == 1_020_036
+    end
   end
 
   describe "part 2" do
@@ -37,5 +37,4 @@ defmodule Aoc2020test.Day1 do
       assert result == 286_977_330
     end
   end
-
 end
