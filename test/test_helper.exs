@@ -1,4 +1,4 @@
-ExUnit.start()
+ExUnit.start(exclude: [:skip])
 
 defmodule Helpers do
   def read_file_to_list(path) do
