@@ -1,4 +1,4 @@
-defmodule Aoc2020test.Day12 do
+defmodule Aoc2020test.Day13 do
   use ExUnit.Case
   import Helpers, only: [read_file_to_list: 1]
 
