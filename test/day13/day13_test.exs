@@ -2,7 +2,6 @@ defmodule Aoc2020test.Day13 do
   use ExUnit.Case
   import Helpers, only: [read_file_to_list: 1]
 
-  @tag :skip
   describe "Part1" do
     test "it works for sample input" do
       input = read_file_to_list("./test/day13/sample_input.txt")
